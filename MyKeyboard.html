@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title> My KeyBoard </title>
+
+<link href="mykeyboard.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="key.png" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="mykeyboard.js"></script>
+<script type="text/javascript" src="keyboard.js"> </script>
+</head>
+
+<body>
+
+<div id="wrapper">
+	<div id="top">
+		<h1 id="name"> <center> Virtual Keyboard </center> <h1>
+		<center> <input type="textarea" id="write_box" onclick = "keyVisible()">  </center>
+	</div>  																						<!-- top div -->
+	<audio id="button_click" src="bubble.mp3" preload="auto"></audio>	
+	<audio id="text_click" src="ClickOn.mp3" preload="auto"> </audio>																		
+	<div id="container">
+		<ul id="keyboard" onclick="addAudio()">
+	 	 <li class ="symbol"> <span class ="off">`</span> <span class="on">~</span> </li>
+	 	 <li class ="symbol"> <span class ="off">1</span> <span class="on">!</span> </li>
+	 	 <li class ="symbol"> <span class ="off">2</span> <span class="on">@</span> </li>
+	 	 <li class ="symbol"> <span class ="off">3</span> <span class="on">#</span> </li>
+	 	 <li class ="symbol"> <span class ="off">4</span> <span class="on">$</span> </li>
+	 	 <li class ="symbol"> <span class ="off">5</span> <span class="on">%</span> </li>
+	 	 <li class ="symbol"> <span class ="off">6</span> <span class="on">^</span> </li>
+	 	 <li class ="symbol"> <span class ="off">7</span> <span class="on">&amp;</span> </li>
+	 	 <li class ="symbol"> <span class ="off">8</span> <span class="on">*</span> </li>
+	 	 <li class ="symbol"> <span class ="off">9</span> <span class="on">(</span> </li>
+	 	 <li class ="symbol"> <span class ="off">0</span> <span class="on">)</span> </li>
+	 	 <li class ="symbol"> <span class ="off">-</span> <span class="on">_</span> </li>
+	 	 <li class ="symbol"> <span class ="off">=</span> <span class="on">+</span> </li>
+	 	 <li class ="delete last_element"> Delete </li>
+	 	 <li class = "tab"> Tab </li>
+	 	 <li class = "letter"> <span class ="off">q</span> <span class="on">Q</span> </li>
+	 	 <li class = "letter"> <span class ="off">w</span> <span class="on">W</span> </li>
+	 	 <li class = "letter"> <span class ="off">e</span> <span class="on">E</span> </li>
+	 	 <li class = "letter"> <span class ="off">r</span> <span class="on">R</span> </li>
+	 	 <li class = "letter"> <span class ="off">t</span> <span class="on">T</span> </li>
+	 	 <li class = "letter"> <span class ="off">y</span> <span class="on">Y</span> </li>
+	 	 <li class = "letter"> <span class ="off">u</span> <span class="on">U</span> </li>
+	 	 <li class = "letter"> <span class ="off">i</span> <span class="on">I</span> </li>
+	 	 <li class = "letter"> <span class ="off">o</span> <span class="on">O</span> </li>
+	 	 <li class = "letter"> <span class ="off">p</span> <span class="on">P</span> </li>
+	 	 <li class="symbol"><span class="off">[</span><span class="on">{</span></li>
+     	 <li class="symbol"><span class="off">]</span><span class="on">}</span></li>
+     	 <li class="symbol lastitem"><span class="off">\</span><span class="on">|</span></li>
+     	 <li class="capslock">caps lock</li>
+     	 <li class="letter"> <span class ="off">a</span> <span class="on">A</span> </li>
+     	 <li class="letter"> <span class ="off">s</span> <span class="on">S</span> </li>
+     	 <li class="letter"> <span class ="off">d</span> <span class="on">D</span> </li>
+     	 <li class="letter"> <span class ="off">f</span> <span class="on">F</span> </li>
+     	 <li class="letter"> <span class ="off">g</span> <span class="on">G</span> </li>
+     	 <li class="letter"> <span class ="off">h</span> <span class="on">H</span> </li>
+     	 <li class="letter"> <span class ="off">j</span> <span class="on">J</span> </li>
+     	 <li class="letter"> <span class ="off">k</span> <span class="on">K</span> </li>
+     	 <li class="letter"> <span class ="off">l</span> <span class="on">L</span> </li>
+     	 <li class="symbol"><span class="off">;</span><span class="on">:</span></li>
+     	 <li class="symbol"><span class="off">'</span><span class="on">&quot;</span></li>
+     	 <li class="return lastitem">return</li>
+     	 <li class="left-shift">shift</li>
+     	 <li class="letter"> <span class ="off">z</span> <span class="on">Z</span> </li>
+     	 <li class="letter"> <span class ="off">x</span> <span class="on">X</span> </li>
+     	 <li class="letter"> <span class ="off">c</span> <span class="on">C</span> </li>
+     	 <li class="letter"> <span class ="off">v</span> <span class="on">V</span> </li>
+     	 <li class="letter"> <span class ="off">b</span> <span class="on">B</span> </li>
+     	 <li class="letter"> <span class ="off">n</span> <span class="on">N</span> </li>
+     	 <li class="letter"> <span class ="off">m</span> <span class="on">M</span> </li>
+     	 <li class="symbol"><span class="off">,</span><span class="on">&lt;</span></li>
+     	 <li class="symbol"><span class="off">.</span><span class="on">&gt;</span></li>
+     	 <li class="symbol"><span class="off">/</span><span class="on">?</span></li>
+     	 <li class="right-shift lastitem">shift</li>
+     	 <li class="space lastitem"> SPACE </li>
+    	</ul> 																						<!-- keyboard UL -->
+    </div>																							<!-- container div -->
+</div>																								<!-- wrapper div -->
+
+</body>
+</html>
